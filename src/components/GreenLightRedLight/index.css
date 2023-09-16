@@ -1,0 +1,41 @@
+.game_container {
+  height: 90vh;
+}
+
+.box_container {
+  height: 150px;
+  width: 150px;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 0px;
+  animation: rotateAndPause 4s linear infinite;
+}
+
+@keyframes rotateAndPause {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .winContainer {
+  background-image: url("https://img.freepik.com/premium-vector/goal-achievement-successful-progress-career-ladder-female-character_194360-239.jpg?w=826");
+  background-size: cover;
+  height: 500px;
+  width: 500px;
+} */
