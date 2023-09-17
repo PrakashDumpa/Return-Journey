@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -7,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useEffect, useState } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -29,10 +29,32 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function LeaderBoard({ leaderBoardList }) {
+  const [tableSize, setTableSize] = useState(500);
+
+  window.addEventListener("resize", function (event) {
+    if (window.innerWidth > 768) {
+      setTableSize(500);
+    } else {
+      setTableSize(300);
+    }
+  });
+
+  // console.log(tableSize);
+
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      setTableSize(500);
+    } else {
+      setTableSize(300);
+    }
+  }, []);
+
   return (
-    <TableContainer component={Paper} className="p-5">
-      <h1 className="text-center text-primary h2 mb-3">Leader Board</h1>
-      <Table sx={{ minWidth: 500 }} className="shadow">
+    <TableContainer component={Paper} className="p-0 p-md-5 ">
+      <h1 className="text-center text-primary h2 mb-3 mt-3 mt-md-0">
+        Leader Board
+      </h1>
+      <Table sx={{ minWidth: tableSize }} className="shadow">
         <TableHead>
           <TableRow>
             <StyledTableCell>Player</StyledTableCell>

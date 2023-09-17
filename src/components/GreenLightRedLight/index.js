@@ -23,7 +23,7 @@ const GreenLightRedLight = () => {
   const [timer, setTimer] = useState(40);
   const [currentScore, setCurrentScore] = useState(0);
   const [targetScore, setTargetScore] = useState();
-  const [randomIndex, setRandomIndex] = useState();
+  const [randomIndex, setRandomIndex] = useState(0);
   const [showRestartModal, setShowRestartModal] = useState(false);
   const [showLeaderBoard, setShowLeaderBoard] = useState(false);
   const [leaderBoardList, setLeaderBoardList] = useState([]);
@@ -74,7 +74,7 @@ const GreenLightRedLight = () => {
     }
   };
 
-  console.log(leaderBoardList);
+  // console.log(leaderBoardList);
   const onClickStartGameButton = () => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const isValidEmail = emailRegex.test(userEmail);
@@ -117,7 +117,7 @@ const GreenLightRedLight = () => {
             <Chip
               label={EASY}
               variant={level === EASY ? "filled" : "outlined"}
-              className="mr-3"
+              className="mr-3 mb-3 mb-md-0"
               color="primary"
               sx={{ width: 100 }}
               onClick={() => setLevel(EASY)}
@@ -125,7 +125,7 @@ const GreenLightRedLight = () => {
             <Chip
               label={MEDIUM}
               variant={level === MEDIUM ? "filled" : "outlined"}
-              className="mr-3"
+              className="mr-3 mb-3 mb-md-0"
               color="primary"
               sx={{ width: 100 }}
               onClick={() => setLevel(MEDIUM)}
@@ -236,9 +236,6 @@ const GreenLightRedLight = () => {
               : "bg-danger"
           }`}
         >
-          {/* <button className={`box_container ${bgColors[randomIndex]}`}>
-       <h1>Krishna</h1>
-     </button> */}
           <button
             className={`square shadow-lg ${bgColors[randomIndex]}`}
             onClick={updateScore}

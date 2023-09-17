@@ -9,13 +9,19 @@
 .nav_width {
   width: 90vw;
 }
-.nav-item {
-  font-size: 17px;
-  text-decoration: none;
-  color: white;
+
+.nav_heading {
+  font-size: 35px;
 }
-.nav-item:hover {
-  font-size: 17px;
-  color: white;
-  text-decoration: none;
+
+.score_container {
+  font-size: 27px;
+}
+@media screen and (max-width: 768px) {
+  .nav_heading {
+    font-size: 20px;
+  }
+  .score_container {
+    font-size: 16px;
+  }
 }
