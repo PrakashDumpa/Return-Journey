@@ -14,14 +14,16 @@ const Header = ({ userName, currentScore, targetScore, timer }) => (
           </p>
           <h1 className="h4 m-0">
             <span className="text-secondary">{targetScore} / </span>
-            {currentScore}
+            {currentScore.toString().padStart(2, "0")}
           </h1>
         </li>
         <li className="d-flex align-items-center mr-4">
           <p className="m-0 mr-2">
             <TimerIcon />
           </p>
-          <h1 className="h4 m-0">{timer}</h1>
+          <h1 className={`h4 m-0 ${timer <= 5 ? "text-danger" : ""}`}>
+            {timer.toString().padStart(2, "0")}
+          </h1>
         </li>
         <li className="d-flex align-items-center">
           <p className="m-0 mr-2">

@@ -1,12 +1,20 @@
 .game_container {
   height: 90vh;
+  background-image: url("https://img.freepik.com/premium-photo/white-table-with-white-table-blue-vase-it_739292-9803.jpg?size=626&ext=jpg&ga=GA1.1.905824719.1684755036&semt=sph");
+  background-size: cover;
+  position: relative;
 }
 
 .box_container {
   height: 150px;
   width: 150px;
 }
-
+.userFormContainer {
+  background-image: url("https://img.freepik.com/premium-vector/white-striped-abstract-vector-background-light-infinity-design_547648-2658.jpg?w=740");
+}
+.formCon {
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .square {
   width: 200px;
   height: 200px;
@@ -33,9 +41,16 @@
   }
 }
 
-/* .winContainer {
-  background-image: url("https://img.freepik.com/premium-vector/goal-achievement-successful-progress-career-ladder-female-character_194360-239.jpg?w=826");
-  background-size: cover;
-  height: 500px;
-  width: 500px;
-} */
+.leader_board_button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+@media screen and (orientation: portrait) and (max-width: 990px) {
+  .parent_container {
+    /* display: none; */
+    /* color: red !important; */
+    background-color: red;
+  }
+}
